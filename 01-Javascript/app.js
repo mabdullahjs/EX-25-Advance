@@ -292,10 +292,155 @@
 
 
 
-export let username = "abdullah"
+// export let username = "abdullah"
 
-const sum =  (num1 , num2) => {
-    return num1 + num2
+// const sum =  (num1 , num2) => {
+//     return num1 + num2
+// }
+
+// export default sum
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log("hello world 1")
+// console.log("hello world 2")
+// console.log("hello world 3")
+// setTimeout(() => {
+//     console.log("hello world 4")
+// }, 0);
+// console.log("hello world 5")
+
+
+
+
+// set timeout
+// set interval
+// promise
+// then catch
+// async await
+// fetch
+// axios
+
+
+
+
+
+// fulfilled
+// pending
+// rejected
+
+
+// const age = 12
+
+// const promise1 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         if (age > 18) {
+//             resolve("welcome to gym")
+
+//         } else {
+//             reject("nikal yaha sa")
+
+//         }
+//     }, 1000);
+// })
+
+
+// promise1
+// .then((res)=>{
+//     console.log(res);
+
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"https://jsonplaceholder.typicode.com/users"
+"https://the-trivia-api.com/v2/questions"
+
+
+
+
+
+
+
+
+function carBudget(budget) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (budget > 300000) {
+                resolve("ajayegi car")
+            } else {
+                reject("nahi ayegi")
+            }
+        }, 1000);
+    })
 }
 
-export default sum
+
+// carBudget(2000000)
+//     
+
+
+// async function hello (){
+//     try {
+//         const response = await carBudget(200000)
+//         console.log(response);
+//     } catch (error) {
+//         console.error(error);
+        
+//     }
+    
+// } 
+// hello()
+
+// console.error("hello")
+// console.warn("warning");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// json 
+
+// {
+//     "name": "abc"
+// }
+
+
+
+
