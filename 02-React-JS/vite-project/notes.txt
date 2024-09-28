@@ -1,0 +1,30 @@
+nodejs download kiya uska saath npm bhi agayaa.
+
+
+npm kiya ha?
+
+Node pakage manager
+
+uska baad react ki app banani ha vite ka through
+
+npm create vite@latest
+
+app ka undar jaka sabsa pehla kaam npm i
+
+npm i saara pakages download krdaiga node modules ki shakal ma.
+
+pakage.json ka undar poori application ki information ha.
+
+app ko start krna ka liya npm run dev
+
+terminal open krna ki shortcut ctrl + ` (esc ka neecha wala)
+
+
+server band hoga ctrl + c
+
+
+hooks 
+
+
+
+
