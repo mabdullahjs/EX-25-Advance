@@ -209,7 +209,7 @@ const App = () => {
             {/* {loading ? <h1>Loading...</h1> : null} */}
             {loading && <h1>Loading...</h1>}
             {users && users.map((item, index) => {
-                return <Btn title={item.name}/>
+                return <Btn title={item.name }/>
             })}
             {error && <h1>Nahi dikha rha bhai ma...</h1>}
         </>
