@@ -77,7 +77,7 @@
 //     <button onClick={changeCard}>{showCard ? 'hide' : 'show'}</button>
 
 //     {showCard ? <Card title="check card" description='hello world lorem ipsum' src="https://via.placeholder.com/200"/> : null}
-    
+
 //     </>
 //   )
 // }
@@ -127,3 +127,98 @@
 // reuseable components || props
 // styling
 // olx card
+
+
+
+
+// import React, { useEffect, useState } from 'react'
+// import Btn from './components/Btn'
+
+// const App = () => {
+//     const [showBtn , setShowBtn] = useState(false)
+
+//     useEffect(()=>{
+//         fetch('https://jsonplaceholder.typicode.com/users')
+//         .then(res => res.json())
+//         .then(res => console.log(res))
+//         .catch(err => console.log(err))
+//     } , [])
+
+//     return (
+//         <>
+//             <h1>Hello world!</h1>
+//             <button onClick={()=> setShowBtn(!showBtn)}>{showBtn ? 'off' : 'On'}</button> <br /><br />
+//             {showBtn ? <Btn title="hello"/> : null}
+//         </>
+//     )
+// }
+
+// export default App
+
+
+
+// import React, { useState } from 'react'
+// import Btn from './components/Btn'
+
+// const App = () => {
+//     const [show, setshow] = useState(false)
+//   return (
+//     <>
+//     <h1>Quiz App</h1>
+//     <div className='text-center'>
+//     <button onClick={()=> setshow(!show)}>{show ? 'OFF' : 'ON'}</button>
+
+//     </div>
+//     {show ? <Btn title="add to cart"/>  : <p>Nahi krwa rha show </p>}
+//     </>
+//   )
+// }
+
+// export default App
+
+
+
+import React, { useEffect, useState } from 'react'
+import Btn from './components/Btn';
+
+const App = () => {
+
+    const [users, setUsers] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+    useEffect(() => {
+        getData()
+    }, [])
+
+    async function getData() {
+        try {
+            const data = await fetch('https://jsonplaceholder.typicode.com/users')
+            const response = await data.json()
+            console.log(response);
+            setUsers(response)
+        } catch (error) {
+            console.log(error)
+            setError(true)
+        } finally {
+            setLoading(false)
+        }
+    }
+    return (
+        <>
+            <h1>Quiz App</h1>
+            {/* {loading ? <h1>Loading...</h1> : null} */}
+            {loading && <h1>Loading...</h1>}
+            {users && users.map((item, index) => {
+                return <Btn title={item.name}/>
+            })}
+            {error && <h1>Nahi dikha rha bhai ma...</h1>}
+        </>
+    )
+}
+
+export default App
+
+
+
+// javascript ka undar kon kon si values falsy hoti hain
+
