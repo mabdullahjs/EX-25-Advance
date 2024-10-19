@@ -1,0 +1,29 @@
+1- assignment upload
+
+facebook group 
+linkedin
+
+2- trello
+3- unknown rules ko ignore krna ha.
+
+
+REACT ROUTER DOM:
+
+npm i react-router-DOM
+- main.jsx ki file ma poori app ko RouterProvider ka component ma wrap up krdia ha.
+- aik simple router ka variable banayaa or uska undar createBrowserROuter ka function call krdia 
+- RouterProvider ka component ma router ka aik prop mangaya or usma router ka var pass krdia
+
+
+
+
+
+material ui  dynamic route > nested route
+
+firebase authentication , firestore , storage // olx clone 
+
+redux toolkit for global state
+
+
+
+
