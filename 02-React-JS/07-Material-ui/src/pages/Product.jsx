@@ -36,7 +36,7 @@ const Product = () => {
       {loading && <CircularProgress />}
       {error && <Typography className='text-center m-5'>Server Error 404</Typography>}
       <Box className="d-flex justify-content-center gap-5 flex-wrap">
-        {student && student.map((item, index) => {
+        {student && student.map((item) => {
           return <BasicCard key={item._id} title={item.fullName} email={item.email} func={()=>singlestudent(item)} />
         })}
       </Box>
