@@ -34,7 +34,7 @@ const Login = () => {
   }
   return (
     <>
-      <h1 className='text-center'>Login</h1>
+      <h1 className='text-center'>Login Updated</h1>
       <form onSubmit={loginUser}>
         <input type="email" placeholder='enter your email' ref={email} />
         <input type="password" placeholder='enter your password' ref={password} />

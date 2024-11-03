@@ -1,0 +1,15 @@
+creating build of a react project
+install firebase
+firebase login
+
+
+In project
+firebase init
+hosting and configure file for firebase
+
+dist
+single page yes
+n
+n
+
+firebase deploy
