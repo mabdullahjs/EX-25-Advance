@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { signOutUser } from '../config/firebase/firebasemethods'
 
@@ -10,13 +10,13 @@ const Navbar = () => {
         <>
             <div className="navbar bg-primary text-white">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-xl">daisyUI</a>
+                    <Link to={'/'} className="btn btn-ghost text-xl">Blogging App</Link>
                 </div>
                 {user ? <div className="flex-none">
                     <div className="dropdown dropdown-end text-black">
                         <div tabIndex={0} role="button" className="btn btn-ghost">
                             <div className="">
-                            <a className="btn btn-ghost text-xl">Muhammad Abdullah</a>
+                            <a className=" text-xl">user</a>
                             </div>
                         </div>
                         <ul
@@ -32,7 +32,7 @@ const Navbar = () => {
                                 }).catch((err)=>{
                                     console.log(err);
                                 })
-                            }}>Logout</li>
+                            }}><Link>Logout</Link></li>
                         </ul>
                     </div>
                 </div> : <div className="">

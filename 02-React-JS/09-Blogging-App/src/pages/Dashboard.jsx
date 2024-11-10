@@ -6,8 +6,9 @@ const Dashboard = () => {
 
   // states
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [dbDocId, setDbDocId] = useState(null);
+  const [error , setError] = useState(false)
 
   // use effect for get user blog
   useEffect(() => {
@@ -17,7 +18,7 @@ const Dashboard = () => {
         setData(res)
       }).catch((err) => {
         console.log(err);
-
+        setError(true)
       })
   }, [])
 
@@ -73,12 +74,16 @@ const Dashboard = () => {
     <>
       <h1 className='text-center mt-5 text-2xl'>Dashboard</h1>
 
+
       <form className='flex flex-col gap-4 justify-center items-center'>
         <input type="text" placeholder="title" className="input input-bordered w-full max-w-xs" ref={title} />
         <textarea className="textarea textarea-bordered w-[20rem]" placeholder="What is in your mind?" ref={description}></textarea>
 
         <button type='submit' className="btn btn-primary" onClick={postBlog}> {loading ? <span className="loading loading-spinner loading-sm"></span> : 'Publish Blogs'}</button>
       </form>
+
+
+      {error && <h1 className='text-center'>No data found!</h1>}
 
       <div className='flex justify-center mt-5 flex-wrap gap-5 m-5'>
         {data && data.map((item, index) => {
