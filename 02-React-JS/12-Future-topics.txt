@@ -1,0 +1,13 @@
+React hook form
+formik
+yup validation
+App write
+Real time firestore
+React query
+RTK Query
+Typescript
+Zustand
+
+Nextjs
+
+Three.js
