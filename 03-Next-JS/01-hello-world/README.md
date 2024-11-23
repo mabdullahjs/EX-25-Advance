@@ -30,28 +30,16 @@ Understanding the difference between Client-Side Rendering and Server-Side Rende
 ### **2. Server-Side Rendering (SSR) and Static Site Generation (SSG)**
 - Next.js supports SSR and SSG out of the box, allowing for better performance and SEO.
 
-### **3. Incremental Static Regeneration (ISR)**
-- Update static content on demand by revalidating pages without rebuilding the entire application.
-
-### **4. API Routes**
-- Build serverless functions directly in the `api` directory without needing additional backend frameworks.
-
-### **5. Optimized Image Handling**
+### **3. Optimized Image Handling**
 - Use the `next/image` component for automatic image optimization, resizing, and lazy loading.
 
-### **6. CSS and Styling**
+### **4. CSS and Styling**
 - Supports CSS-in-JS, Sass, and other styling solutions directly integrated with your project.
 
-### **7. Fast Refresh**
+### **5. Fast Refresh**
 - Provides instant feedback during development by preserving component state while editing code.
 
-### **8. Middleware**
-- Customize request and response handling before reaching the final route using Next.js middleware.
-
-### **9. Automatic Code Splitting**
-- Load only the JavaScript needed for the current page, reducing initial load time.
-
-### **10. TypeScript Support**
+### **6. TypeScript Support**
 - Next.js has built-in TypeScript support for type-safe development.
 
 ---
