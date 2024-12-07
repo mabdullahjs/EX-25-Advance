@@ -39,6 +39,7 @@
 
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react'
 
 const Home = async () => {
@@ -59,7 +60,13 @@ const Home = async () => {
               alt={item.name}
             />
             <p>{item.name.slice(0, 10)}...</p>
-            <button>Generate this meme</button>
+            <Link href={{
+              pathname: "creatememe",
+              query: {
+                url: item.url,
+                id: item.id
+              }
+            }}><button className='bg-blue-400 px-5 py-3 rounded my-3'>Generate this meme</button></Link>
           </div>
         })}
       </div>
