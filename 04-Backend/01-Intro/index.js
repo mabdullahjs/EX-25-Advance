@@ -8,20 +8,20 @@ app.use(express.json());
 
 const todo = [];
 
-app.get('/' , (req , res)=>{
+app.get('/', (req, res) => {
     res.send("hello world");
 })
 
-app.get('/todos' , (req , res)=>{
-    
+app.get('/todos', (req, res) => {
+
     res.json({
         message: 'All todos',
         todo
     })
 })
 
-app.post('/todos' , (req , res)=>{
-    const {title} = req.body
+app.post('/todos', (req, res) => {
+    const { title } = req.body
     const obj = {
         title,
         id: Date.now()
@@ -34,6 +34,7 @@ app.post('/todos' , (req , res)=>{
     })
 })
 
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${port}`)
 })
