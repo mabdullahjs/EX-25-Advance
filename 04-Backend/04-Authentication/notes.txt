@@ -1,0 +1,16 @@
+har dafa jab server pa request kronga to mujha btana prhaiga k ma kon hon.
+
+password kabhi bhi asal form ma db ma save nahi krwaonga.
+
+password ko encrypt krka save krwayenga.
+
+abdullah ===> bdevmmbi
+
+
+password encrypt kaisa hoga dcrypt krainga
+jwt token kaisa banaiga
+cookies ma data kaisa save krwana ha.
+
+
+
+password
