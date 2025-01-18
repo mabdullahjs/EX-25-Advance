@@ -1,0 +1,17 @@
+flatlist
+keyboardavoidingview
+scrollview
+text input
+button
+onpress
+
+todo app
+layout stack wala screen option prop
+expo status bar
+
+
+stack navigation
+dynamic route
+
+Tab navigation
+Drawer navigation
