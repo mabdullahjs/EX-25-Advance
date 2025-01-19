@@ -10,3 +10,5 @@ const Profile = () => {
 }
 
 export default Profile
+
+// camera + firebase + current location marker etc.

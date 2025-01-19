@@ -1,0 +1,19 @@
+expo camera
+
+camera open and close krwayaa
+
+camera ko use krta hua aik image click ki.
+
+us image ko screen pa show krwayaa.
+
+usi image ko phone ka undar save krwaya media library expo ko use krta hua.
+
+
+koi bhi image phone ki gallery sa pick krka screen pa show krwado using expo imagepicker library.
+
+
+
+
+Firebase
+
+Map

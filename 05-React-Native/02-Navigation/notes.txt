@@ -15,3 +15,5 @@ dynamic route
 
 Tab navigation
 Drawer navigation
+
+Camera
