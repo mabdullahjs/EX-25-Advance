@@ -7,5 +7,5 @@ export default function RootLayout() {
       <Stack.Screen name="login"/>
       <Stack.Screen name="register"/>
     </Stack>
-  );
+  )
 }
