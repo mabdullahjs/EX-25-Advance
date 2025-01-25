@@ -1,25 +1,49 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet, FlatList, Text, Image, KeyboardAvoidingView } from 'react-native';
+import { View, TextInput, Button, StyleSheet, FlatList, Text, Image, KeyboardAvoidingView, ScrollView, TouchableOpacity } from 'react-native';
 import carIcon from '../assets/icons/car.png'
 import motorbikeIcon from '../assets/icons/motorbike.png'
 import rickshawIcon from '../assets/icons/rickshaw.png'
 
 
 export default function RideBookingScreen() {
-    
+
     const [destination, setDestination] = useState('');
+    const [predictions, setPredictions] = useState([]);
     const icons = [
         { id: '1', name: 'Car', icon: carIcon },
         { id: '2', name: 'Bike', icon: motorbikeIcon },
         { id: '3', name: 'Rickshaw', icon: rickshawIcon },
     ];
 
+  
+    const apiKey = 'your api key';
+
+    const fetchAutocomplete = async (query) => {
+        try {
+            const response = await fetch(
+                `https://maps.gomaps.pro/maps/api/place/textsearch/json?query=${query}&key=${apiKey}`
+            );
+            const data = await response.json();
+            console.log(data.results);
+
+            setPredictions(data.results);
+        } catch (error) {
+            console.error('Error fetching autocomplete predictions:', error);
+        }
+    };
+
 
     // ride booked
-    const rideBooked = async ()=>{
-      
+    const rideBooked = async () => {
         console.log(destination);
-        
+        await fetchAutocomplete(destination)
+
+    }
+
+    // select destination
+    const selectDestination = (item) => {
+        // setPredictions([]);
+        console.log( n);
     }
 
     return (
@@ -30,6 +54,14 @@ export default function RideBookingScreen() {
                 value={destination}
                 onChangeText={setDestination}
             />
+            {predictions.length > 0 && <ScrollView style={styles.predictionsContainer}>
+                {predictions.map((item) => (
+                    <TouchableOpacity key={item.place_id} style={styles.predictionItem} onPress={() => selectDestination(item)}>
+                        <Text style={styles.predictionTitle}>{item.name}</Text>
+                        <Text style={styles.predictionDetails}>{item.formatted_address}</Text>
+                    </TouchableOpacity>
+                ))}
+            </ScrollView>}
             <View style={styles.iconSliderContainer}>
                 <FlatList
                     data={icons}
@@ -97,5 +129,3 @@ const styles = StyleSheet.create({
         margin: 10
     },
 });
-
-//AlzaSygG7UsMwA2DOhQ5P588iErobS8CHcarI0g
