@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { onAuthStateChanged } from "firebase/auth";
 import { router } from "expo-router";
-import {auth} from "@/config/firebase/firebaseconfig"
+import { auth } from "@/config/firebase/firebaseconfig"
+import Map from "@/components/Map"
+import RideScreen from "@/components/RideScreen"
 
 export default function Index() {
   useEffect(() => {
@@ -11,19 +13,15 @@ export default function Index() {
         const uid = user.uid;
         console.log(uid);
       } else {
-       router.push('/login')
+        router.push('/login')
       }
     });
 
   }, [])
   return (
     <View style={styles.container}>
-      <View style={styles.children}>
-        <Text>Edit app/index.tsx to edit this screen.</Text>
-      </View>
-      <View style={styles.children}>
-        <Text>Edit app/index.tsx to edit this screen.</Text>
-      </View>
+      <Map />
+      <RideScreen />
     </View>
   );
 }
