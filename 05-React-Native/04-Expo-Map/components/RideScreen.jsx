@@ -3,20 +3,30 @@ import { View, TextInput, Button, StyleSheet, FlatList, Text, Image, KeyboardAvo
 import carIcon from '../assets/icons/car.png'
 import motorbikeIcon from '../assets/icons/motorbike.png'
 import rickshawIcon from '../assets/icons/rickshaw.png'
+import { useDispatch } from 'react-redux';
+import { setLocation } from '@/config/redux/reducers/locationSlice';
 
 
 export default function RideBookingScreen() {
 
     const [destination, setDestination] = useState('');
     const [predictions, setPredictions] = useState([]);
+
+    // dispatch for global state
+    const dispatch = useDispatch()
+
+    // icons
     const icons = [
         { id: '1', name: 'Car', icon: carIcon },
         { id: '2', name: 'Bike', icon: motorbikeIcon },
         { id: '3', name: 'Rickshaw', icon: rickshawIcon },
     ];
 
+    
+
+    // fetch locations from gomaps api
   
-    const apiKey = 'your api key';
+    const apiKey = 'AlzaSygG7UsMwA2DOhQ5P588iErobS8CHcarI0g';
 
     const fetchAutocomplete = async (query) => {
         try {
@@ -43,7 +53,9 @@ export default function RideBookingScreen() {
     // select destination
     const selectDestination = (item) => {
         // setPredictions([]);
-        console.log( n);
+        console.log(item.geometry.location);
+        dispatch(setLocation(item.geometry.location))
+
     }
 
     return (
@@ -56,7 +68,7 @@ export default function RideBookingScreen() {
             />
             {predictions.length > 0 && <ScrollView style={styles.predictionsContainer}>
                 {predictions.map((item) => (
-                    <TouchableOpacity key={item.place_id} style={styles.predictionItem} onPress={() => selectDestination(item)}>
+                    <TouchableOpacity key={item.place_id}  onPress={() => selectDestination(item)}>
                         <Text style={styles.predictionTitle}>{item.name}</Text>
                         <Text style={styles.predictionDetails}>{item.formatted_address}</Text>
                     </TouchableOpacity>
